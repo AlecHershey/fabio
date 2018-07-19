@@ -1,0 +1,10 @@
+c:\users\alec\source\repos\FabioWebProject\FabioWebProject\bin\Debug\netcoreapp1.1\FabioWebProject.deps.json
+c:\users\alec\source\repos\FabioWebProject\FabioWebProject\bin\Debug\netcoreapp1.1\FabioWebProject.runtimeconfig.json
+c:\users\alec\source\repos\FabioWebProject\FabioWebProject\bin\Debug\netcoreapp1.1\FabioWebProject.runtimeconfig.dev.json
+c:\users\alec\source\repos\FabioWebProject\FabioWebProject\obj\Debug\netcoreapp1.1\FabioWebProject.csprojResolveAssemblyReference.cache
+c:\users\alec\source\repos\FabioWebProject\FabioWebProject\obj\Debug\netcoreapp1.1\FabioWebProject.csproj.CoreCompileInputs.cache
+c:\users\alec\source\repos\FabioWebProject\FabioWebProject\obj\Debug\netcoreapp1.1\FabioWebProject.AssemblyInfo.cs
+C:\Users\Alec\source\repos\FabioWebProject\FabioWebProject\bin\Debug\netcoreapp1.1\FabioWebProject.dll
+C:\Users\Alec\source\repos\FabioWebProject\FabioWebProject\bin\Debug\netcoreapp1.1\FabioWebProject.pdb
+C:\Users\Alec\source\repos\FabioWebProject\FabioWebProject\obj\Debug\netcoreapp1.1\FabioWebProject.dll
+C:\Users\Alec\source\repos\FabioWebProject\FabioWebProject\obj\Debug\netcoreapp1.1\FabioWebProject.pdb

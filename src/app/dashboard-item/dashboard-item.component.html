@@ -1,0 +1,102 @@
+<div class="card mb-4">
+
+  <div class="card-body">
+    <h5 class="card-title">{{day.name}}</h5>
+    <p class="card-text" *ngIf="record.exercises && record.exercises.length">
+      {{day.name}}, we have {{record.exercises.length}} exercises.
+    </p>
+    <p *ngIf="!record.exercises || !record.exercises.length">
+      Plan today's workout!
+    </p>
+      <button type="button" class="btn btn-primary" data-toggle="modal" attr.data-target="{{'#ViewModal-'+ day.id}}">
+        See Workout
+      </button>
+      <!-- ViewModal -->
+      <div class="modal fade" [id]="'ViewModal-'+day.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel" (click)="getUserWorkout()">{{day.name + "'s Workout"}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-4" *ngFor="let e of record.exercises; let i = index;">
+                  <div class="card bg-light mb-3">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        {{i + 1}}. {{e.exercise}}
+                      </h5>
+                      <p class="card-text">
+                        <span>{{e.sets}} Sets</span>
+                        <br />
+                        <span>{{e.repetitions}} Reps</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <a class="btn btn-primary" data-toggle="modal" [href]="'#EditModal-'+day.id">Edit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EditModal -->
+      <div class="modal fade" [id]="'EditModal-'+ day.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Plan Workout</h5>
+              <label></label>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <span id="selects">
+                <select [(ngModel)]="selectedExercise">
+                  <option *ngFor="let e of exercises" [value]="e.id">{{e.name}}</option>
+                </select>
+                <button type="button" class="btn btn-primary btn-sm" (click)="addWorkoutExercise()">add exercise</button>
+              </span>
+
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Repetitions</th>
+                    <th>Sets</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let e of record.exercises">
+                    <td>{{e.exercise}}</td>
+                    <td>
+                      <input [(ngModel)]="e.repetitions" class="form-control" type="number" min="1" max="100" />
+                    </td>
+                    <td>
+                      <input [(ngModel)]="e.sets" class="form-control" type="number" min="1" max="100" />
+                    </td>
+                    <td>
+                      <button class="fas fa-trash-alt btn btn-danger" type="button" (click)="deleteWorkoutExercise(e)"></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
+              <button type="button" class="btn btn-primary" (click)="saveChanges()" data-dismiss="modal">save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End Modal-->
+    </div>
+</div>

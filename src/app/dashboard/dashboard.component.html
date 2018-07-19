@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="main">
+
+  </div>
+  <h1 class="text-center mb-3">This Week's Workouts</h1>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let day of days">
+      <dashboard-item [day]="day"></dashboard-item>
+    </div>
+  </div>
+  <!-- <i class="fas fa-spinner"></i> -->
+</div>
